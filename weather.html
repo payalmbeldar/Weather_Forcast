@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #650f29;
+        }
+
+        .city {
+            color: red;
+            font-weight: bold;
+        }
+
+        .description {
+            color: black;
+        }
+
+        .deg {
+            color: white;
+            background-color: gray;
+            border-radius: 50%;
+            padding: 3px; 
+        }
+
+        .coords {
+            color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Weather Report</h1>
+    <div>
+        <span class="city">{{name}},{{sys.country}}</span>
+        <span class="description">{{weather.[0].description}}</span>
+    </div>
+    <div>
+        <span class="deg">{{wind.deg}}°C</span>
+        <span>Temperature from {{main.temp_min}} to {{main.temp_max}}°C</span>,
+        <span>Wind {{wind.speed}} m/s</span>.
+        <span>Clouds {{clouds.all}}%</span>,
+        <span>{{main.pressure}} hPa</span>
+    </div>
+    <div>
+        <Span>Geo coords</Span>
+        <span class="coords"> [{{coord.lon}}, {{coord.lat}}]</span>
+    </div>
+</body>
+</html>
